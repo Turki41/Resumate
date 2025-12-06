@@ -1,3 +1,10 @@
+interface User {
+  id: string,
+  userName: string,
+  email: string,
+  password: string
+}
+
 interface Resume {
   id: string;
   companyName?: string;
