@@ -40,7 +40,7 @@ label {
 }
 
 input {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+  @apply w-full py-2 px-3 inset-shadow rounded-2xl focus:outline-none bg-white;
 }
 
 textarea {
@@ -61,7 +61,7 @@ form {
   }
 
   .btn-primary {
-    @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full hover:primary-gradient-hover;
+    @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full hover:primary-gradient-hover disabled:opacity-70;
   }
 
   .resume-nav {
@@ -93,11 +93,11 @@ form {
   }
 
   .resumes-section {
-    @apply flex flex-wrap max-md:flex-col max-md:gap-4 gap-6 items-start max-md:items-center w-full max-w-[1850px] justify-evenly;
+    @apply flex flex-wrap max-md:flex-col max-md:gap-4 gap-6 lg:gap-1 px-1 items-start max-md:items-center w-full max-w-[1850px] justify-evenly;
   }
 
   .resume-card {
-    @apply flex flex-col gap-8 h-[560px] w-[350px] lg:w-[430px] xl:w-[490px] bg-white rounded-2xl p-4;
+    @apply flex flex-col gap-8 h-[530px] w-[350px] lg:w-[430px] xl:w-[450px] bg-white rounded-2xl p-4;
   }
 
   .resume-card-header {

@@ -11,14 +11,7 @@ export const POST = async (req: Request) => {
         }
 
         const supabase = await createClient()
-
-        const { data: existingUser } = await supabase.from('Users').select('*').eq('email', email).single()
-
-        if (existingUser) {
-            console.log('User already exist', existingUser)
-            return NextResponse.json({ message: 'User already exists' }, { status: 400 })
-        }
-
+        
         const { data: authData, error: signUpError } = await supabase.auth.signUp({
             email,
             password,
@@ -29,7 +22,13 @@ export const POST = async (req: Request) => {
             return NextResponse.json({ message: signUpError.message }, { status: 400 })
         }
 
-        const { data: newUser, error: insertError } = await supabase.from('Users').insert(authData).single()
+        const inserUser = {
+            id: authData.user!.id,
+            email,
+            userName: userName,
+        }
+        const { data: newUser, error: insertError } = await supabase.from('Users').insert(inserUser).select()
+
 
         if (insertError) {
             console.log('Error in inserting signed up user to db', insertError)
