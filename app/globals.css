@@ -40,7 +40,7 @@ label {
 }
 
 input {
-  @apply w-full py-2 px-3 inset-shadow rounded-2xl focus:outline-none bg-white;
+  @apply w-full py-2 px-3 inset-shadow rounded-xl bg-white;
 }
 
 textarea {

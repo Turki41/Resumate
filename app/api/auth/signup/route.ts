@@ -11,7 +11,7 @@ export const POST = async (req: Request) => {
         }
 
         const supabase = await createClient()
-        
+
         const { data: authData, error: signUpError } = await supabase.auth.signUp({
             email,
             password,
@@ -39,8 +39,6 @@ export const POST = async (req: Request) => {
         return NextResponse.json(
             {
                 message: 'User created successfully',
-                authuser: authData.user,
-                authsession: authData.session,
                 newUserDB: newUser
             },
             { status: 201 }
@@ -48,8 +46,7 @@ export const POST = async (req: Request) => {
     } catch (error: any) {
         console.error("Error in signup api", error.message)
         return NextResponse.json(
-            { message: 'Internal server error', error: error.message },
-            { status: 500 }
+            { message: 'Internal server error' }, { status: 500 }
         )
     }
 }

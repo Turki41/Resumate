@@ -23,8 +23,7 @@ const page = () => {
         password
       }
 
-      const result = await signup(userData).unwrap()
-      console.log('success', result)
+      const response = await signup(userData).unwrap()
       toast.success('signed up')
 
     } catch (error: any) {
@@ -48,13 +47,13 @@ const page = () => {
             <div className="form-div">
 
               <label htmlFor="username">Full Name</label>
-              <input id="username" type="text" value={userName} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUserName(e.target.value)} />
+              <input placeholder="First Last" id="username" type="text" value={userName} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUserName(e.target.value)} />
 
               <label htmlFor="email">Email address</label>
-              <input type="text" value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} />
+              <input placeholder="example@email.com" id="email" type="text" value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} />
 
               <label htmlFor="password">Password</label>
-              <input id="password" type="password" value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} />
+              <input placeholder="*********" id="password" type="password" value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} />
               <button disabled={isLoading} className="btn-primary font-semibold mt-5 flex items-center justify-center">{isLoading ? <Loader2 className="animate-spin" /> : 'Signup'}</button>
             </div>
           </form>
