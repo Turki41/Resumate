@@ -56,3 +56,7 @@ interface Feedback {
     }[];
   };
 }
+
+interface FileUploaderProps {
+  onFileSelect?: (file: File | null) => void 
+}
