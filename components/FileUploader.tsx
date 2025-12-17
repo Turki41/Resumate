@@ -1,4 +1,4 @@
-import { formatFileSize } from '@/app/lib/fileSizeFormat'
+import { formatFileSize } from '@/lib/fileSizeFormat'
 import { useCallback, useState } from 'react'
 import { FileRejection, useDropzone } from 'react-dropzone'
 import toast from 'react-hot-toast'
@@ -45,12 +45,11 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
     })
 
     return (
-        <div className="w-full gradient-border">
+        <div className={`w-full gradient-border transition-all ${isDragActive && 'opacity-70'}`}>
             <div {...getRootProps()}>
                 <input {...getInputProps()} />
 
-                <div className='space-y-4 cursor-pointer'>
-
+                <div className='space-y-4 cursor-pointer relative'>
 
                     {file ?
                         <div className='uploader-selected-file'>

@@ -1,11 +1,15 @@
+import { aiApi } from '@/services/ai'
 import { authApi } from '@/services/auth'
+import { uploadApi } from '@/services/upload'
 import { configureStore } from '@reduxjs/toolkit'
 
 export const store = configureStore({
   reducer: {
-    [authApi.reducerPath]: authApi.reducer
+    [authApi.reducerPath]: authApi.reducer,
+    [uploadApi.reducerPath]: uploadApi.reducer,
+    [aiApi.reducerPath]: aiApi.reducer
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(authApi.middleware)
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(authApi.middleware, uploadApi.middleware, aiApi.middleware)
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

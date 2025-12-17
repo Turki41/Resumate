@@ -3,11 +3,13 @@
 import { useSignupMutation } from "@/services/auth"
 import { Loader2 } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 import toast from "react-hot-toast"
 
 const page = () => {
   const [signup, { isLoading }] = useSignupMutation()
+  const router = useRouter()
 
   const [userName, setUserName] = useState('')
   const [email, setEmail] = useState('')
@@ -25,7 +27,8 @@ const page = () => {
 
       const response = await signup(userData).unwrap()
       toast.success('signed up')
-
+      router.push('/upload')
+      
     } catch (error: any) {
 
       console.log('Error', error)
