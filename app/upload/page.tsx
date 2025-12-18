@@ -4,13 +4,14 @@ import FileUploader from "@/components/FileUploader"
 import Navbar from "@/components/Navbar"
 import { useFeedbackMutation } from "@/services/ai"
 import { useUploadMutation } from "@/services/upload"
-import { useRouter } from "next/navigation"
+import { useRouter } from "nextjs-toploader/app"
 import { useState } from "react"
 import toast from "react-hot-toast"
 
 const page = () => {
     const [upload] = useUploadMutation()
     const [feedback] = useFeedbackMutation()
+    const router = useRouter()
 
     const [isProcessing, setIsProcessing] = useState(false)
     const [statusText, setStatusText] = useState('')
@@ -35,31 +36,28 @@ const page = () => {
             setIsProcessing(true)
             setStatusText('uploading file...')
 
-            const { path } = await upload(formData).unwrap()
+            const { path, fileUUID } = await upload(formData).unwrap()
 
             setStatusText('Analyzing...')
 
-            const { responce } = await feedback({ path }).unwrap()
+            const { response } = await feedback({ path }).unwrap()
+            localStorage.setItem('feedback', JSON.stringify(response as Feedback))
 
-            console.log(responce)
             setStatusText('Analyzing complete, redirecting...')
-            toast.success("good")
+            router.push(`/feedback/${fileUUID}`)
+
         } catch (error) {
             setIsProcessing(false)
             setStatusText('')
             toast.error('Something went wrong please try again')
-        } finally {
-            setIsProcessing(false)
-            setStatusText('')
         }
-
     }
 
     return (
         <main className="bg-[url('/images/bg-main.svg')] bg-cover min-h-screen flex flex-col">
             <Navbar />
 
-            <section className="main-section max-w-[1200px] mx-auto mb-auto sm:mt-20">
+            <section className="main-section max-w-[1200px] mx-auto mb-auto sm:mt-20 md:mt-10 max-xl:mt-20">
 
                 <div className="page-heading">
                     <h1 className="pb-1">Smart feedback for your future job</h1>

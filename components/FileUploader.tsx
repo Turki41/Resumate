@@ -27,6 +27,9 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
             case 'file-invalid-type':
                 toast.error('Only PDF files are allowed')
                 break
+            case 'too-many-files':
+                toast.error("Can't upload more than 1 file at a time")
+                break
             default:
                 toast.error('Invalid file')
         }

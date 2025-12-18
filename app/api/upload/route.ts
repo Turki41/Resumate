@@ -14,15 +14,9 @@ export const POST = async (req: Request) => {
         const buffer = Buffer.from(await file.arrayBuffer())
 
         const supabase = await createClient()
-        /* // should only run once
-        const { data: bucketData, error:bucketError } = await supabase.storage.createBucket('Files')
-        
-        if(bucketError) {
-            console.log('error uploading file in upload controller', bucketError)
-            return NextResponse.json({message: 'Error uploading file'}, {status: 400})
-        }
-         */
-        const filePath = `resumes/${crypto.randomUUID()}.pdf`
+
+        const fileUUID = crypto.randomUUID()
+        const filePath = `resumes/${fileUUID}.pdf`
 
         const {data: uploadData, error: uploadError} = await supabase.storage.from('FIles').upload(filePath, buffer, {contentType: file.type})
 
@@ -33,7 +27,8 @@ export const POST = async (req: Request) => {
 
         return NextResponse.json({
             path: uploadData.path,
-            fullPath: uploadData.fullPath
+            fullPath: uploadData.fullPath,
+            fileUUID
         }, {status: 201})
 
     } catch (error) {

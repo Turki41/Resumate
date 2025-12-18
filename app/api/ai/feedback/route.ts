@@ -39,11 +39,11 @@ export const POST = async (req: Request) => {
         ]
 
         const response = await ai.models.generateContent({
-            model: 'gemini-2.5-flash-lite',
+            model: 'gemini-3-flash-preview',    
             contents: contents
         })
 
-        return NextResponse.json({ response: response }, { status: 200 })
+        return NextResponse.json({ response: response?.text || 'Unable to generate response' }, { status: 200 })
 
     } catch (error) {
         console.log('Error in ai feedback controller', error)
