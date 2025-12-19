@@ -41,6 +41,7 @@ const page = () => {
             setStatusText('Analyzing...')
 
             const { response } = await feedback({ path }).unwrap()
+
             localStorage.setItem('feedback', JSON.stringify(response as Feedback))
 
             setStatusText('Analyzing complete, redirecting...')
