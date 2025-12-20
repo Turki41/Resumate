@@ -1,5 +1,6 @@
 'use client'
 
+import ATS from "@/components/ATS"
 import Summary from "@/components/Summary"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -9,8 +10,9 @@ const page = () => {
 
 
   useEffect(() => {
-    const feedbackObject = localStorage.getItem('feedback')
-    if (feedbackObject) {
+    const feedbackString = localStorage.getItem('feedback')
+    if (feedbackString) {
+      const feedbackObject = JSON.parse(feedbackString)
       setFeedback(JSON.parse(feedbackObject))
     }
 
@@ -27,16 +29,17 @@ const page = () => {
         </Link>
       </nav>
 
-      <div className="flex flex-row w-full max-lg:flex-col-reverse">
+      <div className="flex min-w-full items-center justify-center">
         <section className="feedback-section">
           <h2 className="text-4xl! font-bold">Resume Review</h2>
           {feedback ? (
             <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
               <Summary feedback={feedback}/>
+              <ATS score={feedback?.ATS?.score || 0} suggestions={feedback?.ATS?.tips || [{type: 'good', tip: 'fff'}]}/>
             </div>
           ) : (
             <div>
-              <img src="/images/resume-scan-2.gif" alt="resume scan" />
+              <img src="/images/resume-scan-2.gif" alt="resume-scan"/>
             </div>
           )}
         </section>

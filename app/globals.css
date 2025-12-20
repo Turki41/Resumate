@@ -101,7 +101,7 @@ form {
   }
 
   .feedback-section {
-    @apply flex flex-col gap-8 w-1/2 px-8 max-lg:w-full py-6;
+    @apply flex flex-col gap-8 w-full lg:w-2/3 xl:w-1/2 px-8 py-6;
   }
 
   .navbar {

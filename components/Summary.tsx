@@ -8,7 +8,7 @@ interface SummaryProps {
 const Summary = ({ feedback }: SummaryProps) => {
     return (
         <div className="bg-white rounded-2xl shadow-md w-full">
-            <div className="flex items-center p-4 gap-8">
+            <div className="flex max-sm:flex-col items-center p-4 gap-8">
                 <ScoreGauge score={feedback.overallScore} />
 
                 <div className="flex flex-col gap-2">
