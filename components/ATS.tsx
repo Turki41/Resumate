@@ -20,7 +20,7 @@ const ATS = ({ score, suggestions }: AtsProps) => {
         return '/icons/ats-bad.svg'
     }
     return (
-        <div className={`rounded-2xl shadow-md w-full bg-gradient-to-b to-light-white p-8 flex flex-col gap-4 ${getColor(score)}`}>
+        <div className={`rounded-2xl shadow-md w-full bg-linear-to-b to-light-white p-8 flex flex-col gap-4 ${getColor(score)}`}>
             <div className="flex flex-row gap-4 items-center">
                 <img src={getIcon(score)} alt="ATS" className="size-10" />
                 <p className="text-2xl font-semibold">ATS Score - {score}/100</p>

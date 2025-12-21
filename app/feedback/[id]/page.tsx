@@ -1,6 +1,7 @@
 'use client'
 
 import ATS from "@/components/ATS"
+import Details from "@/components/Feedback"
 import Summary from "@/components/Summary"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -36,6 +37,7 @@ const page = () => {
             <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
               <Summary feedback={feedback}/>
               <ATS score={feedback?.ATS?.score || 0} suggestions={feedback?.ATS?.tips || [{type: 'good', tip: 'fff'}]}/>
+              <Details feedback={feedback}/>
             </div>
           ) : (
             <div>
