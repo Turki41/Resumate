@@ -57,6 +57,14 @@ interface Feedback {
   };
 }
 
+interface ResumeShowcase {
+  id: string,
+  companyName: string,
+  jobTitle: string,
+  imagePath: string,
+  overallScore: number
+}
+
 interface FileUploaderProps {
   onFileSelect?: (file: File | null) => void 
 }

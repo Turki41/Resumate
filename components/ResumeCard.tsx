@@ -1,10 +1,9 @@
-import Link from "next/link"
 import ScoreCircle from "./ScoreCircle"
 import Image from "next/image"
 
-const ResumeCard = ({ resume }: { resume: Resume }) => {
+const ResumeCard = ({ resume }: { resume: ResumeShowcase }) => {
     return (
-        <Link href={`/resume/${resume.id}`} className="resume-card animate-in fade-in duration-1000">
+        <div className="resume-card animate-in fade-in duration-1000">
             <div className="resume-card-header">
 
                 <div className="flex flex-col gap-2">
@@ -13,7 +12,7 @@ const ResumeCard = ({ resume }: { resume: Resume }) => {
                 </div>
 
                 <div className="shrink-0">
-                    <ScoreCircle score={resume.feedback.overallScore} />
+                    <ScoreCircle score={resume.overallScore} />
                 </div>
 
             </div>
@@ -23,7 +22,7 @@ const ResumeCard = ({ resume }: { resume: Resume }) => {
                     <Image src={resume.imagePath} alt={'resume'} width={1280} height={720} className="w-full h-auto object-cover"/>
                 </div>
             </div>
-        </Link>
+        </div>
     )
 }
 

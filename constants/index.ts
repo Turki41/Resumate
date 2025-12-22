@@ -1,94 +1,25 @@
-export const resumes: Resume[] = [
+export const resumes: ResumeShowcase[] = [
   {
     id: "1",
     companyName: "Google",
-    jobTitle: "Frontend Developer",
-    imagePath: "/images/resume_01.png",
-    resumePath: "/resumes/resume-1.pdf",
-    feedback: {
-      overallScore: 85,
-      ATS: {
-        score: 90,
-        tips: [],
-      },
-      toneAndStyle: {
-        score: 90,
-        tips: [],
-      },
-      content: {
-        score: 90,
-        tips: [],
-      },
-      structure: {
-        score: 90,
-        tips: [],
-      },
-      skills: {
-        score: 90,
-        tips: [],
-      },
-    },
+    jobTitle: "Cloud Engineer",
+    imagePath: "/images/resume_01.jpg",
+    overallScore: 55
   },
   {
     id: "2",
     companyName: "Microsoft",
-    jobTitle: "Cloud Engineer",
-    imagePath: "/images/resume_02.png",
-    resumePath: "/resumes/resume-2.pdf",
-    feedback: {
-      overallScore: 55,
-      ATS: {
-        score: 90,
-        tips: [],
-      },
-      toneAndStyle: {
-        score: 90,
-        tips: [],
-      },
-      content: {
-        score: 90,
-        tips: [],
-      },
-      structure: {
-        score: 90,
-        tips: [],
-      },
-      skills: {
-        score: 90,
-        tips: [],
-      },
-    },
+    jobTitle: "Frontend Developer",
+    imagePath: "/images/resume_2.png",
+    overallScore: 75
   },
   {
     id: "3",
     companyName: "Apple",
-    jobTitle: "iOS Developer",
+    jobTitle: "UX Designer",
     imagePath: "/images/resume_03.png",
-    resumePath: "/resumes/resume-3.pdf",
-    feedback: {
-      overallScore: 75,
-      ATS: {
-        score: 90,
-        tips: [],
-      },
-      toneAndStyle: {
-        score: 90,
-        tips: [],
-      },
-      content: {
-        score: 90,
-        tips: [],
-      },
-      structure: {
-        score: 90,
-        tips: [],
-      },
-      skills: {
-        score: 90,
-        tips: [],
-      },
-    },
-  },
+    overallScore: 60
+  }
 ];
 
 const AIResponseFormat = `
