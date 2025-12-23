@@ -20,7 +20,7 @@ const page = () => {
   }, [])
 
   return (
-    <main className="pt-0!">
+    <main className="pt-0! bg-[url('/images/bg-main.svg')] bg-cover">
       <nav className="resume-nav">
         <Link href={'/'} className="back-button min-w-fit">
           <img src="/icons/back.svg" alt="back" className="size-3.5" />

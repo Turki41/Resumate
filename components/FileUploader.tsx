@@ -55,7 +55,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
                 <div className='space-y-4 cursor-pointer relative'>
 
                     {file ?
-                        <div className='uploader-selected-file'>
+                        <div className='flex items-center justify-between'>
                             <img src={'/images/pdf.png'} alt='pdf' className='size-10' />
                             <div className='flex items-center space-x-3'>
                                 <div className='flex items-center justify-center flex-col'>
