@@ -79,7 +79,7 @@ form {
   }
 
   .back-button {
-    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm hover:bg-gray-100 bg-white/60 transition-colors;
+    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm hover:bg-gray-100 bg-white duration-100 transition-colors;
   }
 
   .main-section {

@@ -12,8 +12,8 @@ export default function Home() {
 
       <section className="main-section">
         <div className="page-heading pb-1">
-          <h1>Track Your Applications & Resume Ratings</h1>
-          <h2>Review your submissions and chech AI-powered feedback</h2>
+          <h1 className="pb-1 ">Land Your Dream Job with AI-Powered Feedback</h1>
+          <h2>Turn Your Resume Into a Job Magnet</h2>
         </div>
 
         <Link className="btn-primary w-fit mb-14 font-semibold text-xl px-5 flex items-center justify-center gap-2 group" href={'/upload'}>
