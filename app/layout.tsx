@@ -20,20 +20,21 @@ export const metadata: Metadata = {
   description: "Analyze your resume with Ai for ATS score",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
-    <html lang="en">
+    <html lang='en'>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ReduxProvider>
           <Toaster />
-          <NextTopLoader color="#FFC0CB"/>
-          {children}
+          <NextTopLoader color="#FFC0CB" />
+            {children}
         </ReduxProvider>
 
       </body>

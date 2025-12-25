@@ -26,6 +26,7 @@ const Navbar = () => {
         }
     }
 
+
     useEffect(() => {
         const getSession = async () => {
             const supabase = createClient()
@@ -43,18 +44,22 @@ const Navbar = () => {
                 <p className="text-2xl font-bold text-gradient">RESUMATE</p>
             </Link>
 
-            {loading ? (
-                <div className="w-24 h-10 bg-transparent rounded-full animate-pulse" />
-            ) : session ? (
-                <button disabled={isLoading} onClick={handleLogout} className="btn-primary w-fit font-semibold">Logout </button>
-            ) : (
-                <div className="flex items-center gap-2">
-                    <Link className="btn-primary font-semibold" href="/signup">Signup</Link>
-                    <Link className="rounded-full  hover:bg-slate-100 transition-colors px-4 py-2 font-semibold" href="/login">
-                        Login
-                    </Link>
-                </div>
-            )}
+
+            <div className="flex gap-2 items-center">
+                {loading ? (
+                    <div className="w-24 h-10 bg-transparent rounded-full animate-pulse" />
+                ) : session ? (
+                    <button disabled={isLoading} onClick={handleLogout} className="btn-primary w-fit font-semibold">Logout </button>
+                ) : (
+                    <div className="flex items-center gap-2">
+                        <Link className="btn-primary font-semibold" href="/signup">Singup</Link>
+                        <Link className="rounded-full  hover:bg-slate-100 transition-colors px-4 py-2 font-semibold" href="/login">
+                            Login
+                        </Link>
+                    </div>
+                )}
+
+            </div>
         </nav>
     )
 }
