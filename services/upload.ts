@@ -2,11 +2,11 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const uploadApi = createApi({
     reducerPath: 'upload',
-    baseQuery: fetchBaseQuery({baseUrl:process.env.NEXT_PUBLIC_BASE_URL}),
+    baseQuery: fetchBaseQuery({baseUrl:''}),
     endpoints: (builder) => ({
         upload: builder.mutation({
             query: (body) => ({
-                url: 'upload',
+                url: '/api/upload',
                 method: 'POST',
                 body
             })

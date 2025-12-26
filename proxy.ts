@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { checkAuth } from "./middleware/check-auth.middleware";
 import { loginSignup } from "./middleware/login-signup.middleware";
 
-export const proxy = async (req: NextRequest) => {
+export default async function proxy(req: NextRequest) {
     try {
         const path = req.nextUrl.pathname
 
@@ -15,6 +15,8 @@ export const proxy = async (req: NextRequest) => {
             const res = await loginSignup(req)
             return res
         }
+
+        return NextResponse.next()
     } catch (error) {
         console.log('Error in main middleware', error)
         return NextResponse.redirect(new URL('/', req.url))

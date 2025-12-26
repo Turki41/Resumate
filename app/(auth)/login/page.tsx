@@ -48,7 +48,7 @@ const page = () => {
                             <label htmlFor="password">Password</label>
                             <input placeholder="*********" id="password" type="password" value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} />
                                 
-                            <button disabled={isLoading} className="btn-primary font-semibold mt-5 flex items-center justify-center">{isLoading ? <Loader2 className="animate-spin" /> : 'Signup'}</button>
+                            <button disabled={isLoading} className="btn-primary font-semibold mt-5 flex items-center justify-center">{isLoading ? <Loader2 className="animate-spin" /> : 'Login'}</button>
                         </div>
                     </form>
 
