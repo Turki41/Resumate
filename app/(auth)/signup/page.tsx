@@ -27,8 +27,10 @@ const page = () => {
 
       const response = await signup(userData).unwrap()
       toast.success('signed up')
-      router.push('/upload')
-      
+      await new Promise((resolve) => setTimeout(resolve, 150))
+      router.replace('/upload')
+      router.refresh()
+
     } catch (error: any) {
 
       console.log('Error', error)

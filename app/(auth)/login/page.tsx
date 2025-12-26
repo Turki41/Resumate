@@ -24,7 +24,9 @@ const page = () => {
             }
 
             const response = await login(loginData).unwrap()
-            router.push('/upload')
+            await new Promise((resolve) => setTimeout(resolve, 150))
+            router.replace('/upload')
+            router.refresh()
         } catch (error: any) {
             return toast.error(error?.data?.message)
         }
@@ -47,7 +49,7 @@ const page = () => {
 
                             <label htmlFor="password">Password</label>
                             <input placeholder="*********" id="password" type="password" value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} />
-                                
+
                             <button disabled={isLoading} className="btn-primary font-semibold mt-5 flex items-center justify-center">{isLoading ? <Loader2 className="animate-spin" /> : 'Login'}</button>
                         </div>
                     </form>
