@@ -17,7 +17,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.556.0",
-    "next": "16.0.7",
+    "next": "16.0.10",
     "nextjs-toploader": "^3.9.17",
     "pdf2pic": "^3.2.0",
     "react": "19.2.0",
