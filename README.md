@@ -4,7 +4,7 @@
 
 Resumate is a modern web application that helps job seekers optimize their resumes for Applicant Tracking Systems (ATS). Get instant, comprehensive feedback on your resume with AI-powered analysis covering ATS compatibility, content quality, structure, tone, and skills presentation.
 
-![Next.js](https://img.shields.io/badge/Next.js-16.0.7-black?style=flat&logo=next.js)
+![Next.js](https://img.shields.io/badge/Next.js-16.0.10-black?style=flat&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.2.0-blue?style=flat&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat&logo=typescript)
 ![Supabase](https://img.shields.io/badge/Supabase-2.86.2-green?style=flat&logo=supabase)
@@ -29,7 +29,7 @@ Resumate is a modern web application that helps job seekers optimize their resum
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Next.js 16.0.7** - React framework with App Router
+- **Next.js 16.0.10** - React framework with App Router
 - **React 19.2.0** - UI library
 - **TypeScript 5** - Type-safe development
 - **Tailwind CSS 4** - Utility-first CSS framework
